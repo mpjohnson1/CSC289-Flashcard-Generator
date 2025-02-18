@@ -48,3 +48,12 @@ CREATE TABLE progress_tracking (
     FOREIGN KEY (user_id) REFERENCES users(user_id) ON DELETE CASCADE,
     FOREIGN KEY (card_id) REFERENCES flashcards(card_id) ON DELETE CASCADE
 );
+
+CREATE TABLE feedback (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER,
+    rating TEXT,
+    comments TEXT,
+    timestamp DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(user_id)
+);
