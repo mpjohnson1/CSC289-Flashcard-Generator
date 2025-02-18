@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Form</title>
+      {% load static %}
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; }
+        form { width: 50%; margin: auto; padding: 20px; border: 1px solid #ccc; border-radius: 10px; }
+        textarea { width: 100%; height: 100px; }
+        button { padding: 10px 20px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+  <!-- feedback form -->
+    <h2>We'd Love Your Feedback!</h2>
+
+    <form action="/submit_feedback" method="POST">
+        <label for="rating">Do you like the app?</label><br>
+        <select name="rating" id="rating" required>
+            <option value="yes">Yes</option>
+            <option value="no">No</option>
+        </select>
+        <br><br>
+      
+    <!-- option for more input than binary -->
+        <label for="comments">Additional Comments:</label><br>
+        <textarea name="comments" id="comments" placeholder="Tell us more..."></textarea>
+        <br><br>
+
+        <button type="submit">Submit Feedback</button>
+    </form>
+
+</body>
+</html>
